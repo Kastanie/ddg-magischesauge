@@ -1,0 +1,121 @@
+body {
+	margin: 0px;
+	overflow: hidden;
+}
+.overlay_image {
+	/* Alle PNGs, die über der Webcam liegen */
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 4000px;
+	transform: translateY(-2000px);
+	background-position: center center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.beams_background {
+	background-image: url(beams-background.png);
+}
+.sclera {
+	background-image: url(sclera.png);
+	opacity: 0.5;
+}
+.sclera--hidden {
+	display: none;
+}
+.lashes {
+	background-image: url(lashes.png);
+
+	animation-name: lashes;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+@keyframes lashes {
+	0% { opacity: 1; }
+	90% { opacity: 1; }
+	91% { opacity: 0; }
+	100% { opacity: 0; }
+}
+.lashes--hidden {
+	display: none;
+}
+.eye_shut {
+	background-image: url(eye-shut.png);
+
+	animation-name: eye_shut;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+@keyframes eye_shut {
+	0% { opacity: 0; }
+	90% { opacity: 0; }
+	91% { opacity: 1; }
+	100% { opacity:1; }
+}
+
+.eye_shut--hidden {
+	display: none;
+}
+.iris {
+	position: absolute;
+	top: calc(50% - 22vw);
+	left: 30%; /* 16 .. 45 */
+	width: 38%;
+	height: 38vw;
+	background-color: #0099cc;
+	border-radius: 50%;
+
+	animation-name: iris;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+/*
+Die Animationen sind:
+19% geradeaus gucken (10%)
+5% nach links bewegen (24%)
+13% nach links gucken (37%)
+6% zur Mitte bewegen (43%)
+16% geradeaus schauen (59%)
+7% nach rechts bewegen (66%)
+24% nach rechts gucken (90%)
+10% Auge zu (100%)
+*/
+@keyframes iris {
+	0% { left: 30%; }
+	19% { left: 30%; }
+	24% { left: 16%; }
+	37% { left: 16%; }
+	43% { left: 30%; }
+	59% { left: 30%; }
+	66% { left: 45%; }
+	90% { left: 45%; }
+	100% { left: 45%; }
+}
+.iris--hidden {
+	display: none;
+}
+.pupil {
+	position: absolute;
+	top: 31%; /* 35 .. 33*/
+	left: 33%; /* 20 .. 53 */
+	width: 35%;
+	height: 35%;
+	background-color: black;
+	border-radius: 50%;
+
+	animation-name: pupil;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+@keyframes pupil {
+	0% { top: 31%; left: 33%; }
+	19% { top: 31%; left: 33%; }
+	24% { top: 35%; left: 20%; }
+	37% { top: 35%; left: 20%; }
+	43% { top: 31%; left: 33%; }
+	59% { top: 31%; left: 33%; }
+	66% { top: 33%; left: 53%; }
+	90% { top: 33%; left: 53%; }
+	100% { top: 33%; left: 53%; }
+}

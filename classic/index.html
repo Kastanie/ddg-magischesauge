@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles.css">
+	<!-- Quelle: https://aframe.io/releases/1.0.4/aframe.min.js -->
+	<script src="aframe.min.js"></script>
+	<!-- we import arjs version without NFT but with marker + location based support -->
+	<!-- Quelle: https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js -->
+	<script src="aframe-ar.js"></script>
+</head>
+<body>
+	<a-scene>
+		<a-marker preset="custom" type="pattern" url="airship-marker-pattern.patt" smooth="true">
+			<!-- smooth bewegt das Video weicher -->
+			<a-video src="way.mp4" rotation="-90 180 180"></a-video>
+		</a-marker>
+		<a-entity camera></a-entity>
+	</a-scene>
+	<div class="overlay_image beams_background"></div>
+	<div class="overlay_image sclera"></div>
+	<div class="iris"><div class="pupil"></div></div>
+	<div class="overlay_image lashes"></div>
+	<div class="overlay_image eye_shut"></div>
+	<script>
+		const markerEl = document.querySelector("a-marker")
+		const scleraEl = document.querySelector(".sclera")
+		const irisEl = document.querySelector(".iris")
+		const lashesEl = document.querySelector(".lashes")
+		const eyeShutEl = document.querySelector(".eye_shut")
+		setInterval(() => {
+			if(markerEl.object3D.visible == true) {
+				scleraEl.classList.add("sclera--hidden")
+				irisEl.classList.add("iris--hidden")
+				lashesEl.classList.add("lashes--hidden")
+				eyeShutEl.classList.add("eye_shut--hidden")
+			} else {
+				scleraEl.classList.remove("sclera--hidden")
+				irisEl.classList.remove("iris--hidden")
+				lashesEl.classList.remove("lashes--hidden")
+				eyeShutEl.classList.remove("eye_shut--hidden")
+			}
+		}, 500)
+	</script>
+</body>
+</html>
