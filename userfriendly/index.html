@@ -18,25 +18,21 @@
 		</a-marker>
 		<a-entity camera></a-entity>
 	</a-scene>
-	<div class="overlay_image beams_background"></div>
-	<div class="overlay_image sclera"></div>
 	<div class="iris"><div class="pupil"></div></div>
+	<div class="overlay_image beams_background"></div>
 	<div class="overlay_image lashes"></div>
 	<div class="overlay_image eye_shut"></div>
 	<script>
 		const markerEl = document.querySelector("a-marker")
-		const scleraEl = document.querySelector(".sclera")
 		const irisEl = document.querySelector(".iris")
 		const lashesEl = document.querySelector(".lashes")
 		const eyeShutEl = document.querySelector(".eye_shut")
 		setInterval(() => {
 			if(markerEl.object3D.visible == true) {
-				scleraEl.classList.add("sclera--hidden")
 				irisEl.classList.add("iris--hidden")
 				lashesEl.classList.add("lashes--hidden")
 				eyeShutEl.classList.add("eye_shut--hidden")
 			} else {
-				scleraEl.classList.remove("sclera--hidden")
 				irisEl.classList.remove("iris--hidden")
 				lashesEl.classList.remove("lashes--hidden")
 				eyeShutEl.classList.remove("eye_shut--hidden")

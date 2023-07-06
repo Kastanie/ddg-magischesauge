@@ -17,13 +17,6 @@ body {
 .beams_background {
 	background-image: url(beams-background.png);
 }
-.sclera {
-	background-image: url(sclera.png);
-	opacity: 0.5;
-}
-.sclera--hidden {
-	display: none;
-}
 .lashes {
 	background-image: url(lashes.png);
 
@@ -59,11 +52,13 @@ body {
 }
 .iris {
 	position: absolute;
-	top: calc(50% - 22vw);
+	top: calc(50% - 20vw);
+	/* Iris selbst ist transparent */
+	/* Alles um die Iris herum ist weiß (Sclera) */
+	box-shadow: 0 0 0 1000px white;
 	left: 30%; /* 16 .. 45 */
 	width: 38%;
 	height: 38vw;
-	background-color: #0099cc;
 	border-radius: 50%;
 
 	animation-name: iris;
@@ -95,13 +90,15 @@ Die Animationen sind:
 .iris--hidden {
 	display: none;
 }
+
 .pupil {
 	position: absolute;
 	top: 31%; /* 35 .. 33*/
 	left: 33%; /* 20 .. 53 */
 	width: 35%;
 	height: 35%;
-	background-color: black;
+	background-color: white;
+	opacity: 30%;
 	border-radius: 50%;
 
 	animation-name: pupil;
