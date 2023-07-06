@@ -19,7 +19,6 @@ body {
 }
 .sclera {
 	background-image: url(sclera.png);
-	opacity: 0.5;
 }
 .sclera--hidden {
 	display: none;
