@@ -52,13 +52,13 @@ body {
 }
 .iris {
 	position: absolute;
-	top: calc(50% - 20vw);
 	/* Iris selbst ist transparent */
 	/* Alles um die Iris herum ist weiß (Sclera) */
 	box-shadow: 0 0 0 1000px white;
+	top: calc(50% - 16vw);
 	left: 30%; /* 16 .. 45 */
-	width: 38%;
-	height: 38vw;
+	width: 32vw;
+	height: 32vw;
 	border-radius: 50%;
 
 	animation-name: iris;
@@ -77,15 +77,15 @@ Die Animationen sind:
 10% Auge zu (100%)
 */
 @keyframes iris {
-	0% { left: 30%; }
-	19% { left: 30%; }
-	24% { left: 16%; }
-	37% { left: 16%; }
-	43% { left: 30%; }
-	59% { left: 30%; }
-	66% { left: 45%; }
-	90% { left: 45%; }
-	100% { left: 45%; }
+	0% { left: 33%; }
+	19% { left: 33%; }
+	24% { left: 19%; }
+	37% { left: 19%; }
+	43% { left: 33%; }
+	59% { left: 33%; }
+	66% { left: 48%; }
+	90% { left: 48%; }
+	100% { left: 48%; }
 }
 .iris--hidden {
 	display: none;
