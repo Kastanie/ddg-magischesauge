@@ -15,7 +15,7 @@ body {
 	background-repeat: no-repeat;
 }
 .beams_background {
-	background-image: url(beams-background.png);
+	background-image: url(beams-background-yellow.png);
 }
 .sclera {
 	background-image: url(sclera.png);
@@ -62,7 +62,8 @@ body {
 	left: 30%; /* 16 .. 45 */
 	width: 32vw;
 	height: 32vw;
-	background-color: #860D86;
+	background-color: #0099cc; /* blau */
+	/* background-color: #860D86; */ /* lila */
 	border-radius: 50%;
 
 	animation-name: iris;
